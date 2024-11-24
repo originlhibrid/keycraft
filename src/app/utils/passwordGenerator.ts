@@ -1,8 +1,8 @@
 // Common, memorable words for passphrases
 // Removed commonWords array
 
-const numbers = '0123456789';
 const symbols = '!@#$%^&*';
+const numbers = '0123456789';
 
 // Base words to get synonyms for
 const baseWords = [
@@ -57,7 +57,7 @@ export const generatePassphrase = async (
 
   // Add a random number if requested
   if (includeNumbers) {
-    const randomNum = Math.floor(Math.random() * 100).toString().padStart(2, '0');
+    const randomNum = numbers.charAt(Math.floor(Math.random() * numbers.length));
     selectedWords.push(randomNum);
   }
 
